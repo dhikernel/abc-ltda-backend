@@ -1,0 +1,342 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "ABC LTDA - API reference",
+        "description": "Documentation of each EndPoint for integration.",
+        "contact": {
+            "email": "dhipereira21@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/pedidos/listar": {
+            "get": {
+                "tags": [
+                    "Pedidos - Listar Todos Pedidos"
+                ],
+                "summary": "Listar Todos Pedidos",
+                "description": "Listar Todos Pedidos",
+                "operationId": "7d853f0d5e08823d609078ae2426e651",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "default": {
+                        "description": "Unidentified error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/pedidos/cadastrar": {
+            "post": {
+                "tags": [
+                    "Pedidos - Cadastrar Pedido"
+                ],
+                "summary": "Cadastrar Pedido",
+                "description": "Cadastrar Pedido",
+                "operationId": "b5c206e33492c6fc72d41fd2397789c0",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "product_id": 20,
+                                    "sales_id": 5220,
+                                    "amount": "937"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success"
+                    },
+                    "default": {
+                        "description": "Unidentified error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/pedidos/atualizar/{id}": {
+            "put": {
+                "tags": [
+                    "Pedidos - Atualiza Pedido"
+                ],
+                "summary": "Pedidos - Atualiza Pedido",
+                "description": "Pedidos - Atualiza Pedido",
+                "operationId": "fa0bb8083909c650e6981d6e16a59bf2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "product_id": 20,
+                                    "sales_id": 5220,
+                                    "amount": "937"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "default": {
+                        "description": "Unidentified error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/pedidos/deletar/{id}": {
+            "delete": {
+                "tags": [
+                    "Pedidos - Deletar Pedido"
+                ],
+                "summary": "Deletar Pedido",
+                "description": "Pedidos - Deletar Pedido",
+                "operationId": "096d2fca0744c6d6e51de4653fe5ab81",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "default": {
+                        "description": "Unidentified error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/produtos/listar": {
+            "get": {
+                "tags": [
+                    "Produto - Listar Todos Produtos"
+                ],
+                "summary": "Listar Todos Produtos",
+                "description": "Listar Todos Produtos",
+                "operationId": "80f29c0309d6dfdd2c187a842348583e",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "default": {
+                        "description": "Unidentified error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/produtos/cadastrar": {
+            "post": {
+                "tags": [
+                    "Produto - Cadastra Produto"
+                ],
+                "summary": "Cadastrar Produto",
+                "description": "cadastrar Produto",
+                "operationId": "e8680065c1897c7b9ed8d026c6a8c414",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "name": "Celular 1",
+                                    "price": 11.5,
+                                    "description": "Unde quae et id optio quia. Cumque ut ad ex exercitationem necessitatibus quia. Harum ut sequi possimus."
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Success"
+                    },
+                    "default": {
+                        "description": "Unidentified error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/produtos/atualizar/{id}": {
+            "put": {
+                "tags": [
+                    "Produto - Atualizar Produto"
+                ],
+                "summary": "Atualiza Produto",
+                "description": "Atualiza Produto",
+                "operationId": "884417c243b8a220340d610a2b16900c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "example": {
+                                    "name": "Celular 1",
+                                    "price": 11.5,
+                                    "description": "Unde quae et id optio quia. Cumque ut ad ex exercitationem necessitatibus quia. Harum ut sequi possimus."
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "default": {
+                        "description": "Unidentified error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/produtos/deletar/{id}": {
+            "delete": {
+                "tags": [
+                    "Produto - Deletar Produto"
+                ],
+                "summary": "Delete Record",
+                "description": "Deletar Produto",
+                "operationId": "e8b0fa269f995a6e80f2bd73b4ace4e3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "default": {
+                        "description": "Unidentified error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Order": {
+                "properties": {
+                    "product_id": {
+                        "description": "ID do Produto",
+                        "type": "integer"
+                    },
+                    "sales_id": {
+                        "description": "ID do pedido",
+                        "type": "integer"
+                    },
+                    "amount": {
+                        "description": "Total da venda",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "Product": {
+                "properties": {
+                    "name": {
+                        "description": "Nome do Produto",
+                        "type": "string"
+                    },
+                    "price": {
+                        "description": "Preço do Produto",
+                        "type": "decimal"
+                    },
+                    "description": {
+                        "description": "Descrição do Produto",
+                        "type": "text"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "bearer": {
+                "type": "http",
+                "description": "Authorization token obtained from logging in.",
+                "name": "Authorization",
+                "in": "header",
+                "scheme": "bearer"
+            }
+        }
+    }
+}

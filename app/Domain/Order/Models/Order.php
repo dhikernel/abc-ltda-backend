@@ -10,6 +10,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @OA\Schema(
+ *
+ * @OA\Property(property="product_id", type="integer", description="ID do Produto"),
+ * @OA\Property(property="sales_id", type="integer", description="ID do pedido"),
+ * @OA\Property(property="amount", type="integer", description="Total da venda")
+ * )
+ * Class Order
+ */
 class Order extends Model
 {
     use HasFactory;

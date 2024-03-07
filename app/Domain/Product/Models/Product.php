@@ -8,6 +8,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @OA\Schema(
+ *
+ * @OA\Property(property="name", type="string", description="Nome do Produto"),
+ * @OA\Property(property="price", type="decimal", description="Preço do Produto"),
+ * @OA\Property(property="description", type="text", description="Descrição do Produto")
+ * )
+ * Class Product
+ */
 class Product extends Model
 {
     use HasFactory;
