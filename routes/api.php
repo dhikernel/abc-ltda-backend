@@ -9,14 +9,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/listar', [ProductController::class, 'index'])->name('product.list');
+Route::prefix('produtos')->group(function () {
 
-Route::post('/cadastrar', [ProductController::class, 'store'])->name('product.create');
+    Route::get('/listar', [ProductController::class, 'index'])->name('product.list');
 
-Route::put('/atualizar/{id}', [ProductController::class, 'update'])->name('product.update');
+    Route::post('/cadastrar', [ProductController::class, 'store'])->name('product.create');
 
-Route::delete('/deletar/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+    Route::put('/atualizar/{id}', [ProductController::class, 'update'])->name('product.update');
 
+    Route::delete('/deletar/{id}', [ProductController::class, 'destroy'])->name('product.destroy');
+});
 
 Route::prefix('pedidos')->group(function () {
 
